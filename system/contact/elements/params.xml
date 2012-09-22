@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="params" addfieldpath="/plugins/system/acontact/elements">
+        <fieldset name="jalikonweb"
+                  label="PLG_FIELDSET_ALIKONWEB_OPTIONS">
+            <field name="show_video" type="list"
+                   default="0"
+                   label="COM_CONTACT_FIELD_VIDEO_SHOW_LABEL"
+                   description="COM_CONTACT_FIELD_VIDEO_SHOW_DESC"
+            >
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field name="videoid" type="text"
+                   label="JFIELD_ALIKONWEB_video_LABEL"
+                   description="JFIELD_ALIKONWEB_video_DESC"
+                   size="20" />
+            <field name="width" type="text" default="425" size="5" label="Width" description="The default width of video" />
+            <field name="height" type="text" default="355" size="5" label="Height" description="The default height of video" />				   
+		   
+            <field name="show_map" type="list"
+                   label="COM_CONTACT_FIELD_MAP_SHOW_LABEL"
+                   description="COM_CONTACT_FIELD_MAP_SHOW_DESC"
+                   default="0"
+            >
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+            <field name="type_googlemaps" type="list" default="0" label="MapType" description="Type of map">
+                <option value="0">Google Map</option>
+                <option value="1">Directions</option>
+                <option value="2">Nation</option>
+                <option value="3">Detect</option>
+            </field>				
+            <field name="text" type="text" default="Insert your text" size="45" label="Text" description="Insert your text" />
+		
+            <field name="stato" type="sql" default="10" label="Select a Nation" query="SELECT stato, countryname FROM #__userextras group by stato, countryname order by 2" key_field="stato" value_field="countryname"/>
+            <field name="base" type="text" default="bruxelles" size="45" label="start default Address " description="Insert start default address" />
+            <field name="dest" type="text" default="rome" size="45" label="arrival default Address " description="Insert arrival default address" />
+            <field name="mwidth" type="text" default="425" size="5" label="Width" description="" />
+            <field name="mheight" type="text" default="355" size="5" label="Height" description="" />		
+            <field name="zoom" type="text" default="9" size="2" label="Zoom" description="" />
+            
+        </fieldset>
+    </fields>
+
+</form>
