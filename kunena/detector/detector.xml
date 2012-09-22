@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="kunena" method="upgrade" client="site">
+    <name>Kunena - Detector</name>
+    <version>1.9.9</version>
+    <creationDate>July 2012</creationDate>
+    <author>alikon</author>
+    <authorEmail>info@alikonweb.it</authorEmail>
+    <authorUrl>http://www.alikonweb.it</authorUrl>
+    <copyright>www.alikonweb.it</copyright>
+    <license>GNU/GPLv3 or later</license>
+    <description>PLG_KUNENA_DETECTOR_DESCRIPTION</description>
+    <files>
+        <filename plugin="detector">detector.php</filename>
+        <filename>index.html</filename>
+        <folder>detector</folder>
+        <folder>language</folder>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" label="Basic">
+                <field name="checktype" type="list" default="1" label="Check" description="Normal check the text full check user ip mail">
+                    <option value="1">Normal</option>
+                    <option value="0">Full</option>
+                </field>
+                <field name="sendmail2mod" type="radio" default="1" label="Moderator Warn" description="Send email to moderator on spam ">
+                    <option value="1">YES</option>
+                    <option value="0">NO</option>
+                </field>
+		
+                <field name="sendmail2usr" type="radio" default="1" label="User Warn" description="Send email to user on spam ">
+                    <option value="1">YES</option>
+                    <option value="0">NO</option>
+                </field>
+                <field name="blockspammer" type="radio" default="1" label="User Block" description="Block joomla user on spam">
+                    <option value="1">YES</option>
+                    <option value="0">NO</option>
+                </field>
+                <field name="logoffspammer" type="radio" default="1" label="User Logoff" description="Logoff user detected on spam">
+                    <option value="1">YES</option>
+                    <option value="0">NO</option>
+                </field>
+                <field name="userban" type="radio" default="1" label="User Ban" description="Ban user detected as spam">
+                    <option value="1">YES</option>
+                    <option value="0">NO</option>
+                </field>
+                <field name="hidemessage" type="list" default="1" label="Pending" description="Set pending message detected as spam">
+                    <option value="2">All from user</option>
+                    <option value="1">Only detected</option>
+                    <option value="0">NO</option>
+                </field>
+                
+            </fieldset>			
+        </fields>
+    </config>
+    <updateservers>
+        <server type="extension" priority="1" name="Kunena - Detector">http://www.joomladdons.eu/update/plg_kunena_detector_update.xml</server>
+    </updateservers>
+</extension>
