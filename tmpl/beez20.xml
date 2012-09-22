@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension version="1.6" type="template" client="site" method="upgrade">
+	<name>beez_20</name>
+	<creationDate>April 2012</creationDate>
+	<author>Alikon</author>
+	<authorEmail>info@alikonweb.it</authorEmail>
+	<authorUrl>http://alikonweb.it</authorUrl>
+	<copyright>Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>2.5.0</version>
+	<description>TPL_BEEZ20_XML_DESCRIPTION</description>
+	<files>
+		    <filename>html/com_contact/contact/default_form.php</filename>
+		     <filename>html/com_contact/contact/default.php</filename>
+		      <filename>html/com_contact/contact/default_map.php</filename>
+		       <filename>html/com_contact/contact/default_video.php</filename>
+		    <filename>html/com_content/form/edit.php</filename>
+		    <filename>html/com_weblinks/form/edit.php</filename>
+		    <filename>html/com_users/login/default_login.php</filename>
+		    <filename>html/com_users/registration/default.php</filename>
+	</files>
+</extension>
