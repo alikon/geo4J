@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="alikonweb" method="upgrade" client="site">
+    <name>Alikonweb - Ajax Captcha</name>
+    <author>alikon</author>
+    <creationDate>July 2012</creationDate>
+    <copyright>Copyright (C) 2001 - 2012 Alikonweb All rights reserved.</copyright>
+    <license>license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <authorEmail>info@alikonweb.it</authorEmail>
+    <authorUrl>www.alikonweb.it</authorUrl>
+    <version>1.9.9</version>
+    <description>Protect joomla form from spam and bot with an accessible ajax captcha</description>
+    <files>
+        <filename plugin="acaptcha">acaptcha.php</filename>
+        <filename>refresh.png</filename>
+        <filename>playcode.php</filename>
+        <filename>showcode.php</filename>
+        <filename>blow.php</filename>
+        <filename>AES4.class.php</filename>
+        <filename>phpfiglet_class.php</filename>
+        <folder>media</folder>
+    </files>
+    <languages>
+        <language tag="en-GB">en-GB.plg_alikonweb_ajaxcaptcha.ini</language>
+        <language tag="en-GB">en-GB.plg_alikonweb_ajaxcaptcha.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="BASIC">
+                <field name="smode" type="list" label="Code Layout" default="7" description="Code Layout Description">
+                    <option value="0">ASCII Art</option>
+                    <option value="1">Audio</option>
+                    <option value="2">Image</option>
+                    <option value="3">Audio and Image</option>
+                    <option value="4">ASCII Art and Audio</option>
+                    <option value="5">Math</option>
+                    <option value="6">Roman</option>
+                    <option value="7">Easy math</option>
+                </field>
+                <field name="lcode" type="list" label="Code Lenght" default="4" description="Code Lenght Description">
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </field>
+                <field name="crypt" type="list" label="Use crypt" default="4" description="Use a cypher algorithm">
+                    <option value="0">No</option>
+                    <option value="1">Blowfish</option>
+                    <option value="2">AES</option>
+                </field>
+                <field name="overtime" type="list" default="15" label="Failed attempts" description="Set the max failed attempts before lock form submission">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+        <updateservers>
+        <server type="extension" priority="1" name="Alikonweb - Ajax Captcha">http://www.joomladdons.eu/update/plg_alikonweb_acaptcha_update.xml</server>
+    </updateservers>
+</extension>
