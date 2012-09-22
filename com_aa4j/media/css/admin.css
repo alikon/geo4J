@@ -1,0 +1,25 @@
+.icon-48-doctor {
+	background-image: url(../img/icon48.png)
+}
+.icon-48-members {
+	background-image: url(../img/business_male_female_users.png)
+}
+.icon-32-detect {
+	background-image: url(../img/detect32.png) !important
+}
+.icon-32-delete {
+	background-image: url(../img/ambulance32.png) !important
+}
+.icon-32-options {
+	background-image: url(../img/patient_chart.png) !important
+}
+.icon-32-spam {
+	background-image: url(../img/patient_treatment.png) !important
+}
+.icon-32-unspam {
+	background-image: url(../img/primary_care.png) !important
+}
+.icon-48-app {
+	background-image: url(../img/security-48x48.png)
+}
+

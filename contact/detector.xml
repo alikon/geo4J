@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="contact" method="upgrade" client="site">
+    <name>Contact - Detector</name>
+    <author>alikon</author>
+    <creationDate>July 2012</creationDate>
+    <copyright>Copyright (C) 2005 - 2012 Alikonweb. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>info@alikonweb.it</authorEmail>
+    <authorUrl>www.alikonweb.it</authorUrl>
+    <version>1.9.9</version>
+    <description>PLG_DETECTOR_4_CONTACT_XML_DESCRIPTION</description>
+    <files>
+        <filename plugin="detector">detector.php</filename>
+        <filename>index.html</filename>
+    </files>
+   <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_contact_detector.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_contact_detector.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">		
+                <field name="checktype" type="list" default="1" label="Check" description="Choose the type of check">
+                    <option value="1">Normal</option>
+                    <option value="0">Full</option>
+                </field>
+                <field name="sendmail2con" type="radio" default="1" label="Contact advise" description="Send email to contact on spam ">
+                    <option value="1">YES</option>
+                    <option value="0">NO</option>
+                </field>
+		
+                <field name="sendmail2usr" type="radio" default="1" label="User advise" description="Send email to user on spam ">
+                    <option value="1">YES</option>
+                    <option value="0">NO</option>
+                </field>
+                <field name="blockspammer" type="radio" default="1" label="User Block" description="Block user detected as spammer">
+                    <option value="1">YES</option>
+                    <option value="0">NO</option>
+                </field>		
+            </fieldset>
+        </fields>
+    </config>
+    <updateservers>
+        <server type="extension" priority="1" name="Contact - Detector">http://www.joomladdons.eu/update/plg_contact_detector_update.xml</server>
+    </updateservers>
+</extension>
+

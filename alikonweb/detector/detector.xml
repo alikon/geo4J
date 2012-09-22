@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="alikonweb" method="upgrade" client="site">
+    <name>Alikonweb - Detector</name>
+    <author>alikon</author>
+    <creationDate>July 2012</creationDate>
+    <copyright>(C) 2011 Copyleft - all rights reversed</copyright>
+    <license>GNU General Public License version 3</license>
+    <authorEmail>info@alikonweb.it</authorEmail>
+    <version>1.9.9</version>
+    <description>PLG_ALIKONBWEB_DETECTOR_XML_DESCRIPTION</description>
+    <files>
+        <filename plugin="detector">detector.php</filename>		
+        <filename>index.html</filename>
+        <folder>alikonweb_plgDetector</folder>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_alikonweb_detector.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_alikonweb_detector.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" label="InfoDB">									
+                <field name="ipinfodb_api_use" type="radio" default="1" label="Enable" description="Use InfoDB">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="ipinfodb_api_key" type="text" default="" size="50" label="Ipinfodb.com" description="insert the API key" />
+            </fieldset>		
+            <fieldset name="advanced" label="Honeypot">	
+                <field name="honey_api_use" type="radio" default="1" label="Enable" description="Use HoneyPot">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="honey_api_key" type="text" default="" size="50" label="HoneyPot" description="insert the HoneyPot API key" />
+                <field name="userscore" type="list" default="2" label="Level for block" description="Set for wich level do you want to block">
+                    <option value="0">Search Engine</option>
+                    <option value="1">Suspicious</option>
+                    <option value="2">Harvester</option>
+                    <option value="3">Suspicious and Harvester</option>
+                    <option value="4">Comment Spammer</option>
+                    <option value="5">Suspicious and Comment Spammer</option>
+                    <option value="6">Harvester And Comment Spammer</option>
+                    <option value="7">Suspicious and Harvester and Comment Spammer</option>			
+                </field>
+                <field name="honey_quicklink" type="text" default="" size="90" label="HoneyPot quicklink" description="Insert your HoneyPot quicklink" />
+            </fieldset>		
+            <fieldset name="settings" label="StopforumSpam">									     
+                <field name="stopforumspam_use" type="radio" default="1" label="Enable" description="Use stopforumspam">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="stopforumspam_api_key" type="text" default="" size="50" label="API key" description="insert the StopForumSpam API key optional" />
+            </fieldset>			   
+            <fieldset name="BOTSCOUT" label="Botscout" >						     		
+                <field name="scout_api_use" type="radio" default="1" label="Enable" description="Use Botscout">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="scout_api_key" type="text" default="" size="50" label="API key" description="insert the BotScout API key" />		
+            </fieldset>		
+            <fieldset name="FSPAMLIST" label="Fspamlist">					
+                <field name="fspamlist_use" type="radio" default="1" label="Enable" description="Use fspamlist">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="fspamlist_api_key" type="text" default="" size="50" label="API key" description="insert the API key" />			 
+            </fieldset> 
+            <fieldset name="SPAMHAUS" label="Spamhaus">		
+                <field name="spamhaus_use" type="radio" default="1" label="Enable" description="Use spamhaus">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+            </fieldset> 
+            <fieldset name="SPAMCOP" label="SpamCop">		
+                <field name="spamcop_use" type="radio" default="1" label="Enable" description="Use SpamCop">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+            </fieldset>   		 
+            <fieldset name="Sorbs" label="Sorbs">		
+                <field name="sorbs_use" type="radio" default="1" label="Enable" description="Use Sorbs">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+            </fieldset>   		  		
+            <fieldset name="AKISMET" label="Akismet">	
+                <field name="akismet_use" type="radio" default="1" label="Enable" description="Use akismet">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="akismet_api_key" type="text" default="" size="50" label="API key" description="insert the Akismet API key" />
+            </fieldset>   
+            <fieldset name="DEFENSIO" label="Defensio">
+                <field name="defensio_use" type="radio" default="1" label="Enable" description="Use defensio">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="defensio_api_key" type="text" default="" size="50" label="API key" description="insert the Defensio API key" />
+            </fieldset>			
+            <fieldset name="MOLLOM" label="Mollom">
+                <field name="mollom_use" type="radio" default="0" label="Enable" description="Use Mollom">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="mollom_publickey" type="text" default="" size="50" label="Public key" description="insert the Mollom public key" />
+                <field name="mollom_privatekey" type="text" default="" size="50" label="Private key" description="insert the Mollom private key" />
+            </fieldset>			
+        </fields>
+    </config>
+    <updateservers>
+        <server type="extension" priority="1" name="Alikonweb - Detector">http://www.joomladdons.eu/update/plg_alikonweb_detector_update.xml</server>
+    </updateservers>
+</extension>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="alikonweb" method="upgrade" client="site">
+    <name>Alikonweb - Youtube</name>
+    <author>alikon</author>
+    <creationDate>July 2012</creationDate>
+    <copyright>(C) 2012 Alikonweb.it All rights reserved.</copyright>
+    <license>GNU/GPL</license>
+    <authorEmail>info@alikonweb.it</authorEmail>
+    <authorUrl>www.alikonweb.it</authorUrl>
+    <version>1.9.9</version>
+    <description>PLG_ALIKONWEB_DESCLOADVIDEO</description>
+    <files>
+        <filename plugin="youtubevideo">youtubevideo.php</filename>      
+    </files>
+    <languages>	
+        <language tag="en-GB">language/en-GB/en-GB.plg_alikonweb_youtubevideo.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_alikonweb_youtubevideo.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="class" type="text" default="" size="15" label="Container class" description="not avaible" />
+                <field name="id" type="text" default="" size="15" label="Container Id" description="not avaible" />
+                <field name="width" type="text" default="425" size="5" label="Width" description="The default width of video" />
+                <field name="height" type="text" default="355" size="5" label="Source" description="The default height of video" />				
+                <field name="source" type="list" default="0" label="Video Source" description="The default source">
+                    <option value="0">Localhost</option>
+                    <option value="1">Youtube</option>
+                    <option value="2">GoogleVideo</option>
+                    <option value="3">Metacafe</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+     <updateservers>
+        <server type="extension" priority="1" name="Alikonweb - Youtube">http://www.joomladdons.eu/update/plg_alikonweb_youtube_update.xml</server>
+    </updateservers>
+</extension>  

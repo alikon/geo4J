@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="alikonweb" method="upgrade" client="site">
+    <name>Alikonweb - GoogleMap</name>
+    <author>alikon</author>
+    <creationDate>July 2012</creationDate>
+    <copyright>(C) 2008 - 2012 Alikonweb. All rights reserved.</copyright>
+    <license>GNU/GPL</license>
+    <authorEmail>info@alikonweb.it</authorEmail>
+    <authorUrl>www.alikonweb.it</authorUrl>
+    <version>1.9.9</version>
+    <description>PLG_ALIKONWEB_DESCLOADMAP</description>
+    <files>
+        <filename plugin="googlemap">googlemap.php</filename>
+        <filename>index.html</filename>		
+        <folder>alikonweb_plgAgmap</folder>     
+        <folder>language</folder>
+    </files>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_alikonweb_googlemap.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_alikonweb_googlemap.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="class" type="text" default="" size="15" label="Container class" description="" />
+                <field name="id" type="text" default="" size="15" label="Container Id" description="" />
+                <field name="base" type="text" default="bruxelles" size="45" label="start default Address " description="Insert start default address" />
+                <field name="dest" type="text" default="rome" size="45" label="arrival default Address " description="Insert arrival default address" />
+                <field name="width" type="text" default="425" size="5" label="Width" description="" />
+                <field name="height" type="text" default="355" size="5" label="Height" description="" />		
+                <field name="zoom" type="text" default="9" size="2" label="Zoom" description="" />
+            </fieldset>
+        </fields>
+    </config>
+    <updateservers>
+        <server type="extension" priority="1" name="Alikonweb - GoogleMap">http://www.joomladdons.eu/update/plg_alikonweb_googlemap_update.xml</server>
+    </updateservers>	
+</extension>  
