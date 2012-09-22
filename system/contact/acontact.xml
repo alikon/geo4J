@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade" client="site">
+    <name>System - Contact</name>
+    <author>alikon</author>
+    <creationDate>July 2012</creationDate>
+    <copyright>Copyright (C) 2001 - 2012 Alikonweb All rights reserved.</copyright>
+    <license>license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <authorEmail>info@alikonweb.it</authorEmail>
+    <authorUrl>www.alikonweb.it</authorUrl>
+    <version>1.9.9</version>
+    <description>Allow to add video and map to contact</description>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_system_acontact.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_system_acontact.sys.ini</language>
+    </languages>
+    <files>
+        <filename plugin="acontact">acontact.php</filename>
+        <filename plugin="acontact">index.html</filename>
+        <folder plugin="acontact">elements</folder>
+		
+    </files>
+    <updateservers>
+        <server type="extension" priority="1" name="System - Contact">http://www.joomladdons.eu/update/plg_system_contact_update.xml</server>
+    </updateservers>	
+</extension>

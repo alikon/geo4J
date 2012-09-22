@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<form>
+	<fields name="metadata">
+ 
+			<fieldset name="geolocation" label="GeoTagging">
+        <field name="cmap" type="amap" default="10" label="GeoTagging" /> 
+        <field name="lat" type="hidden" default="10" label="Select on map" /> 
+        <field name="lng" type="hidden" default="10" label="Select on map" /> 
+         <field name="citta" type="hidden" default="citta" label="Select on map" /> 
+         <field name="postalcode" type="hidden" default="postalcode" label="Select on map" /> 
+          <field name="stato" type="hidden" default="stato" label="Select on map" /> 
+           <field name="siglastato" type="hidden" default="siglastato" label="Select on map" /> 
+            <field name="formattedaddress" type="hidden" default="formattedaddress" label="Select on map" /> 
+			</fieldset>
+	 
+	</fields>
+</form>
