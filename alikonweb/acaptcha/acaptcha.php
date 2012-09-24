@@ -714,7 +714,7 @@ function plgAjaxCaptcha_refresh( $tip,$buttonid ) {
 	//$link_image=$pippo.'plugins/alikonweb/showcode.php?'.time().'&c='.$e.'&x='.$crypt;
 	$url_image	= JRoute::_($link_image);
 	$atooltip	= JText::_('SECUREFROM')."::".JText::_('ENTERTHECODE');
-	$link_font	= JURI::base().'plugins/alikonweb/acaptcha/media/banner4.flf';
+	$link_font	= JURI::base().'plugins/alikonweb/acaptcha/banner4.flf';
 	$link_font	= JRoute::_($link_font);
 	//$classe="validate['required','alphanum','length[3,-1]']";
     JHTML::stylesheet('secureform.css', $link_url, null);
@@ -1050,7 +1050,7 @@ function plgView_Captcha( $tip,$form,$buttonid,$pswid,$msgid ) {
 	//$link_image=$pippo.'plugins/alikonweb/showcode.php?'.time().'&c='.$e.'&x='.$crypt;
 	$url_image	= JRoute::_($link_image);
 	$atooltip	= JText::_('AJAX_CAPTCHA')."::".JText::_('ENTER_THE_CODE');
-	$link_font	= JURI::base().'plugins/alikonweb/acaptcha/media/banner4.flf';
+	$link_font	= JURI::base().'plugins/alikonweb/acaptcha/banner4.flf';
 	//$classe="validate['required','alphanum','length[3,-1]']";
     JHTML::stylesheet('secureform.css', $link_url, null);
 	$document =& JFactory::getDocument();

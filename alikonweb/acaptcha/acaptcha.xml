@@ -2,7 +2,7 @@
 <extension version="2.5" type="plugin" group="alikonweb" method="upgrade" client="site">
     <name>Alikonweb - Ajax Captcha</name>
     <author>alikon</author>
-    <creationDate>July 2012</creationDate>
+    <creationDate>September 2012</creationDate>
     <copyright>Copyright (C) 2001 - 2012 Alikonweb All rights reserved.</copyright>
     <license>license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
     <authorEmail>info@alikonweb.it</authorEmail>
@@ -17,11 +17,12 @@
         <filename>blow.php</filename>
         <filename>AES4.class.php</filename>
         <filename>phpfiglet_class.php</filename>
+        <filename>banner4.flf</filename>
         <folder>media</folder>
     </files>
     <languages>
-        <language tag="en-GB">en-GB.plg_alikonweb_ajaxcaptcha.ini</language>
-        <language tag="en-GB">en-GB.plg_alikonweb_ajaxcaptcha.sys.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_alikonweb_ajaxcaptcha.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_alikonweb_ajaxcaptcha.sys.ini</language>
     </languages>
     <config>
         <fields name="params">

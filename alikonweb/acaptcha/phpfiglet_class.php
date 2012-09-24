@@ -75,7 +75,7 @@ class phpFiglet
 	function loadfont($fontfile)
 	{
 		$f = dirname(__FILE__);
-		$f.='\media\banner4.flf';
+		$f.='/banner4.flf';
 		//$this->fontFile = file($fontfile);
 		$this->fontFile= file($f);
 		//if (!$this->fontFile) die("Couldnt open fontfile $fontfile\n");
