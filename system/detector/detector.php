@@ -80,8 +80,9 @@ class plgSystemDetector extends JPlugin {
                     break;
                 case 'com_weblinks':
                     $this->chkWeblinks();
-
-
+                    break;
+                case 'com_slicomments':
+                    $this->chkSlicomments();
                     break;
                 default:
                     $this->app->enqueueMessage(JText::_('COM_NOTSUPPORTED'));
@@ -244,8 +245,8 @@ class plgSystemDetector extends JPlugin {
                         return false;
                     }
                 }
-                
-                $this->app->enqueueMessage( JText::sprintf('COM_CONTENT_FAILED_XSPAM', $user->title, $cid,$info_detector[0]['text']));
+
+                $this->app->enqueueMessage(JText::sprintf('COM_CONTENT_FAILED_XSPAM', $user->title, $cid, $info_detector[0]['text']));
             }
         }
 
@@ -288,12 +289,55 @@ class plgSystemDetector extends JPlugin {
                         return false;
                     }
                 }
-                $this->app->enqueueMessage(JText::sprintf('COM_WEBLINKS_FAILED_XSPAM', $user->title, $cid,$info_detector[0]['text']));
+                $this->app->enqueueMessage(JText::sprintf('COM_WEBLINKS_FAILED_XSPAM', $user->title, $cid, $info_detector[0]['text']));
             }
         }
 
 
         $this->app->Redirect(JRoute::_('index.php?option=com_weblinks', false));
+    }
+
+    function chkSlicomments() {
+
+        $cids = JRequest::getVar('cid', array(0), 'post', 'array');
+        // $row =& $this->getTable();
+        if (JPluginHelper::isEnabled('alikonweb', 'detector')) {
+            JPluginHelper::importPlugin('alikonweb');
+            $dispatcher2 = & JDispatcher::getInstance();
+            foreach ($cids as $cid) {
+                $query = 'select name AS username, raw AS title, text AS description,' .
+                        ' IFNULL(email,' . $this->db->quote('guest@guest.com') . ') AS email ' .
+                        'FROM #__slicomments WHERE id=' . (int) $cid;
+                $this->db->setQuery($query);
+
+                $user = $this->db->loadObject();
+                //echo(var_dump($user));
+                if (!$this->db->query()) {
+                    JError::raiseError(392, $this->db->getErrorMsg());
+                }
+                if ($this->params->get('checktype', '0')) {
+                    $info_detector = $dispatcher2->trigger('onDetectText', array(null, $user->email, $user->username, $user->title . $user->description, ' '));
+                } else {
+                    $info_detector = $dispatcher2->trigger('onDetectFull', array(null, $user->email, $user->username, $user->title . $user->description, ' '));
+                }
+                // jexit(var_dump($info_detector));
+                if ($info_detector[0]['score'] >= 4) {
+                    $this->db->setQuery(
+                            'UPDATE #__slicomments SET status = -1 WHERE id=' . (int) $cid
+                    );
+                    $this->db->query();
+//jexit('qui');
+                    if ($this->db->getErrorNum()) {
+                        JError::raiseNotice(500, $this->db->getErrorMsg());
+                        return false;
+                    }
+                }
+                $this->app->enqueueMessage(JText::sprintf('COM_SLICOMMENTS_FAILED_XSPAM', $user->username.'('.$user->email .')', $cid, $info_detector[0]['text']));
+            }
+        }
+
+
+        $this->app->Redirect(JRoute::_('index.php?option=com_slicomments', false));
     }
 
     /**
@@ -328,9 +372,9 @@ class plgSystemDetector extends JPlugin {
             JError::raiseError(392, $this->db->getErrorMsg());
         }
         if ($comp->enabled) {
-            $disponibile = array('com_users', 'com_weblinks', 'com_content');
+            $disponibile = array('com_users', 'com_weblinks', 'com_content', 'com_slicomments');
         } else {
-            $disponibile = array('com_weblinks', 'com_content');
+            $disponibile = array('com_weblinks', 'com_content', 'com_slicomments');
         }
 
         if ((in_array($option, $disponibile)) && ($layout == '')) {
