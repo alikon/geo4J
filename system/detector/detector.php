@@ -316,9 +316,9 @@ class plgSystemDetector extends JPlugin {
                     JError::raiseError(392, $this->db->getErrorMsg());
                 }
                 if ($this->params->get('checktype', '0')) {
-                    $info_detector = $dispatcher2->trigger('onDetectText', array(null, $user->email, $user->username, $user->title . $user->description, ' '));
+                    $info_detector = $dispatcher2->trigger('onDetectText', array(null, $user->email, $user->username, htmlspecialchars($user->title . $user->description), ' '));
                 } else {
-                    $info_detector = $dispatcher2->trigger('onDetectFull', array(null, $user->email, $user->username, $user->title . $user->description, ' '));
+                    $info_detector = $dispatcher2->trigger('onDetectFull', array(null, $user->email, $user->username, htmlspecialchars($user->title . $user->description), ' '));
                 }
                 // jexit(var_dump($info_detector));
                 if ($info_detector[0]['score'] >= 4) {
