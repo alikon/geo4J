@@ -63,7 +63,7 @@ class KunenaActivityDetector extends KunenaActivity {
         $messaggio = $message->get('message');
         
         $forumUrl = JURI::base() . 'index.php?option=com_kunena';
-        JPluginHelper::importPlugin('alikonweb', 'alikonweb.detector');
+        JPluginHelper::importPlugin('alikonweb', 'detector');
         $dispatcher = JDispatcher::getInstance();
 
           if ($this->params->get('checktype', '0')) {
