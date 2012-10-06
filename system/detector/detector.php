@@ -6,7 +6,7 @@
  * 
  * @author: Alikon
  * @version: 1.7.0
- * @release: 18/09/2011 17.03
+ * @release: 06/10/2012 11.54
  * @package: Alikonweb.detector 4 Kunena
  * @copyright: (C) 2007-2011 Alikonweb.it
  * @license: http://www.gnu.org/copyleft/gpl.html GNU/GPL

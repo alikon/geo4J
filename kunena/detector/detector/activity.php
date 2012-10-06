@@ -4,7 +4,7 @@
  * Kunena Plugin
  * @package Kunena.Plugins
  * @subpackage Detector
- *
+ * 06/10/2012 11.55
  * @copyright (C) 2008 - 2012 Alikonweb. All rights reserved.
  * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
  * @link http://www.alikonweb.it

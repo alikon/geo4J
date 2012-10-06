@@ -1,6 +1,5 @@
 <?php
-
-/**
+/** 06/10/2012 11.54
  * @package	Alikonweb Applications 4 Joomla
  * @subpackage	Alikonweb Detector Plugin
  * @license		GNU General Public License version 3; see LICENSE.txt
