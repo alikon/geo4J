@@ -311,14 +311,14 @@ class plgSystemDetector extends JPlugin {
                 $this->db->setQuery($query);
 
                 $user = $this->db->loadObject();
-                //echo(var_dump($user));
+               //echo(var_dump($user->description));
                 if (!$this->db->query()) {
                     JError::raiseError(392, $this->db->getErrorMsg());
                 }
                 if ($this->params->get('checktype', '0')) {
-                    $info_detector = $dispatcher2->trigger('onDetectText', array(null, $user->email, $user->username, htmlspecialchars($user->title . $user->description), ' '));
+                    $info_detector = $dispatcher2->trigger('onDetectText', array(null, $user->email, $user->username, $user->description, ' '));
                 } else {
-                    $info_detector = $dispatcher2->trigger('onDetectFull', array(null, $user->email, $user->username, htmlspecialchars($user->title . $user->description), ' '));
+                    $info_detector = $dispatcher2->trigger('onDetectFull', array(null, $user->email, $user->username, $user->description, ' '));
                 }
                 // jexit(var_dump($info_detector));
                 if ($info_detector[0]['score'] >= 4) {

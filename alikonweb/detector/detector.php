@@ -464,7 +464,7 @@ class plgAlikonwebDetector extends JPlugin {
                     'content' => $this->text,
                     'platform' => 'alikonweb_joomla',
                     'client' => 'Defensio-PHP Example | 0.1 | alikon | info@alikonweb.it',
-                    'async' => 'true'
+                    'async' => 'false'
                 );
                 $post_result = $defensio->postDocument($document);
                 $doc1_signature = $post_result[1]->signature;
